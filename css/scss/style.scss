@@ -12,7 +12,87 @@
  */
 
 .utz-nico-responsive-video-html5 {
-	
+
+	// Ads
+	.NicoSpotAdContainer {
+		display: none;
+	}
+
+	// Layout
+	@media (max-width: 1024px) {
+		.WatchAppContainer-main {
+			width: auto;
+			max-width: 1024px;
+
+			// Player
+			.MainContainer-player {
+				width: percentage( (1024px - 384px) / 1024px );
+
+				.VideoContainer {
+					position: relative;
+					width: 100%;
+					height: 0;
+					padding-top: 56.25%;
+				}
+			}
+
+			// Comments
+			.MainContainer-commentPanel {
+				width: percentage( 384px / 1024px );
+			}
+		}
+	}
+
+	@media (max-width: 768px) {
+
+		// Page header
+		.HeaderContainer {
+			> .Grid.HeaderContainer-row {
+				display: block;
+
+				> .GridCell {
+					display: block;
+				}
+
+				.HeaderContainer-videoTitle {
+					padding-right: 0;
+				}
+			}
+		}
+
+		// Video
+		.WatchAppContainer-main {
+
+			// Player
+			.MainContainer-player {
+				width: 100%;
+			}
+
+			// Comments
+			.MainContainer-commentPanel {
+				position: relative;
+				width: 100%;
+
+				.MiniBannerAdContainer {
+					position: relative;
+				}
+
+				.CommentPanelContainer {
+					position: relative;
+					top: 0;
+					bottom: 0;
+					width: auto;
+					height: 300px;
+					margin-left: 10px;
+					margin-right: 10px;
+
+					.CommentPanelDataGrid {
+
+					}
+				}
+			}
+		}
+	}
 }
 
 
@@ -81,6 +161,7 @@
 							> [class^="___player-display"],
 							> [class^="___player-status"] {
 								width: auto;
+								margin-bottom: 10px;
 							}
 						}
 					}
@@ -109,9 +190,12 @@
 							margin-left: 0;
 						}
 
+						[class^="___player-status"] {
+							margin-left: 10px;
+							margin-right: 10px;
+						}
+
 						[class^="___comment-panel"] {
-							padding-left: .5em;
-							padding-right: .5em;
 							height: 300px !important;
 
 							[class^="___header-table"] {
