@@ -39,6 +39,17 @@
 			else if ( $('#playerswf')[0] ) {
 				return player_type == "flash";
 			}
+
+		// 生放送（旧）
+		} else if ( is_page( 'nicolive' ) ) {
+			// Flash
+			if ( $('#flvplayer')[0] ) {
+				return player_type == "flash";
+			}
+			// HTML5
+			else {
+				return player_type == "html5";
+			}
 		}
 	}
 
@@ -60,9 +71,13 @@
 					$('html').addClass( 'utz-nico-responsive-live2-flash' );
 				}
 			}
-			// 生放送：旧配信（Flash）
+			// 生放送：旧配信（現在はFlashのみ）
 			else if ( is_page( 'nicolive' ) ) {
-				$('html').addClass( 'utz-nico-responsive-live-flash' );
+				if ( is_player( 'html5' ) ) {
+					$('html').addClass( 'utz-nico-responsive-live-html5' );
+				} else {
+					$('html').addClass( 'utz-nico-responsive-live-flash' );
+				}
 			}
 		},
 		remove_class: function() {

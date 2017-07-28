@@ -8,6 +8,34 @@
 
 
 /**
+ * Breakpoint
+ */
+@mixin breakpoint( $breakpoint: large ) {
+
+	// ~ 1024px
+	@if $breakpoint == large {
+		@media (max-width: 1024px) {
+			@content;
+		}
+	}
+
+	// ~ 768px
+	@if $breakpoint == medium {
+		@media (max-width: 768px) {
+			@content;
+		}
+	}
+
+	// ~ 480px
+	@if $breakpoint == small {
+		@media (max-width: 480px) {
+			@content;
+		}
+	}
+}
+
+
+/**
  * Nicovideo / HTML5
  */
 
@@ -18,8 +46,7 @@
 		display: none;
 	}
 
-	// Layout
-	@media (max-width: 1024px) {
+	@include breakpoint( large ) {
 		.WatchAppContainer-main {
 			width: auto;
 			max-width: 1024px;
@@ -43,7 +70,7 @@
 		}
 	}
 
-	@media (max-width: 768px) {
+	@include breakpoint( medium ) {
 
 		// Page header
 		.HeaderContainer {
@@ -112,16 +139,83 @@
  * NicoLive 2 / HTML5
  */
 
-@media (max-width: 1024px) {
-
-	.utz-nico-responsive-live2-html5 {
+.utz-nico-responsive-live2-html5 {
+	@include breakpoint( large ) {
 		min-width: 0;
+	}
 
-		body:not([data-browser-fullscreen="parent"]) {
+	body:not([data-browser-fullscreen="parent"]) {
 
-			// Title
-			#program-header-block {
+		// バージョンアップのお知らせ（オフィシャル系＆ユーザー生放送）
+		#html5-switch-bar,
+		#update-info {
+			@include breakpoint( medium ) {
+				padding-top: .5em;
+				padding-bottom: .5em;
+
+				> .inner {
+					width: auto;
+				}
+			}
+		}
+
+		// ニコニコ生放送 ヘッダー
+		#live-header {
+			@include breakpoint( medium ) {
 				width: auto;
+				height: auto;
+				padding-left: 10px;
+				padding-right: 10px;
+
+				// Logo
+				.logo {
+					position: static;
+					margin-top: .5em;
+					margin-bottom: .5em;
+
+					> a {
+						margin-left: auto;
+						margin-right: auto;
+					}
+				}
+
+				// Searchbox
+				.score-search {
+					position: static;
+					width: auto;
+
+					// ユーザー生放送
+					.search-input-wrap {
+						width: calc(100% - 36px);
+
+						> input.search-word {
+							width: 100%;
+						}
+					}
+
+					// オフィシャル系
+					.search-program {
+						display: flex;
+
+						> input.search-word {
+							width: 100%;
+						}
+					}
+				}
+
+				// Ad banner
+				#header-ad {
+					display: none;
+				}
+			}
+		}
+
+		// 番組ヘッダー
+		#program-header-block {
+			@include breakpoint( large ) {
+				width: auto;
+				padding-left: 10px;
+				padding-right: 10px;
 
 				.program-detail {
 					width: auto;
@@ -133,21 +227,34 @@
 					}
 				}
 			}
+		}
 
-			// Tags
-			#program-tag-block {
+		// Tags
+		#program-tag-block {
+			@include breakpoint( medium ) {
 				width: auto;
+				padding-left: 10px;
+				padding-right: 10px;
 
 				.program-tag-list {
 					max-width: none;
 					white-space: initial;
 				}
 			}
+		}
 
-			// Player
-			#player-container, // オフィシャル系
-			#program-main-block #player-block // 一般
-			{
+		// ニコニ広告
+		#user-ad-block {
+			@include breakpoint( large ) {
+				width: auto;
+			}
+		}
+
+		// Player
+		#player-container, // オフィシャル系
+		#program-main-block #player-block // 一般
+		{
+			@include breakpoint( large ) {
 				width: auto;
 				max-width: 1024px;
 
@@ -160,7 +267,7 @@
 						width: 37.5%;
 					}
 
-					@media (max-width: 768px) {
+					@include breakpoint( medium ) {
 						flex-direction: column;
 
 						> [class^="___player-display"],
@@ -189,7 +296,7 @@
 				}
 
 				// Comments
-				@media (max-width: 768px) {
+				@include breakpoint( medium ) {
 					[class^="___program-panel"] {
 						width: 100%;
 						margin-left: 0;
@@ -212,6 +319,12 @@
 		}
 	}
 }
+
+
+
+
+	
+
 
 
 /**
