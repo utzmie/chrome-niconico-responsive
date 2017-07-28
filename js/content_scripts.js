@@ -32,7 +32,7 @@
 		} else if ( is_page( 'nicolive2' ) ) {
 
 			// HTML5
-			if ( $('#message-for-html5player-block')[0] ) {
+			if ( $('#message-for-html5player-block')[0] || $('.message-for-html5player')[0] ) {
 				return player_type == "html5";
 			}
 			// Flash

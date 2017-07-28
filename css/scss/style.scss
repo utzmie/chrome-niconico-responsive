@@ -145,66 +145,66 @@
 			}
 
 			// Player
-			#program-main-block {
-				#player-block {
-					width: auto;
-					max-width: 1024px;
+			#player-container, // オフィシャル系
+			#program-main-block #player-block // 一般
+			{
+				width: auto;
+				max-width: 1024px;
 
-					> div {
-						> [class^="___player-display"] {
-							width: 62.5%;
-						}
-
-						> [class^="___player-status"] {
-							width: 37.5%;
-						}
-
-						@media (max-width: 768px) {
-							flex-direction: column;
-
-							> [class^="___player-display"],
-							> [class^="___player-status"] {
-								width: auto;
-								margin-bottom: 10px;
-							}
-						}
+				> div {
+					> [class^="___player-display"] {
+						width: 62.5%;
 					}
 
-					// Video screen
-					[class^="___player-display-screen"][data-size-name="small"] {
-						position: relative;
-						width: 100%;
-						height: 0;
-						padding-top: 56.25%;
+					> [class^="___player-status"] {
+						width: 37.5%;
 					}
 
-					// ?
-					[class^="___flipboard-layer"]
-					[class^="___comment-layer"]
-					[class^="___widget-layer"]
-					[class^="___interaction-layer"] {
-						width: 100% !important;
-						height: 100% !important;
-					}
-
-					// Comments
 					@media (max-width: 768px) {
-						[class^="___program-panel"] {
-							width: 100%;
-							margin-left: 0;
+						flex-direction: column;
+
+						> [class^="___player-display"],
+						> [class^="___player-status"] {
+							width: auto;
+							margin-bottom: 10px;
 						}
+					}
+				}
 
-						[class^="___player-status"] {
-							margin-left: 10px;
-							margin-right: 10px;
-						}
+				// Video screen
+				[class^="___player-display-screen"][data-size-name="small"] {
+					position: relative;
+					width: 100%;
+					height: 0;
+					padding-top: 56.25%;
+				}
 
-						[class^="___comment-panel"] {
-							height: 300px !important;
+				// ?
+				[class^="___flipboard-layer"]
+				[class^="___comment-layer"]
+				[class^="___widget-layer"]
+				[class^="___interaction-layer"] {
+					width: 100% !important;
+					height: 100% !important;
+				}
 
-							[class^="___header-table"] {
-								width: 100% !important;
-							}
+				// Comments
+				@media (max-width: 768px) {
+					[class^="___program-panel"] {
+						width: 100%;
+						margin-left: 0;
+					}
+
+					[class^="___player-status"] {
+						margin-left: 10px;
+						margin-right: 10px;
+					}
+
+					[class^="___comment-panel"] {
+						height: 300px !important;
+
+						[class^="___header-table"] {
+							width: 100% !important;
 						}
 					}
 				}
