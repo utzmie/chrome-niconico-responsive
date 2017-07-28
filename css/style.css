@@ -51,6 +51,9 @@
 /**
  * Nicovideo / Flash
  */
+.utz-nico-responsive-video-flash #playerTabContainer .nicoSpotAds.active {
+  display: none !important; }
+
 /**
  * NicoLive 2 / HTML5
  */
