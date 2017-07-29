@@ -321,16 +321,32 @@
 }
 
 
-
-
-	
-
-
-
 /**
  * NicoLive 2 / Flash
  */
 
 @media (max-width: 1024px) {
 	/* */
+}
+
+
+/**
+ * NicoLive / Recent (archive)
+ */
+.utz-nico-responsive-live-recent {
+	@include breakpoint( large ) {
+		#page_cover {
+			width: auto;
+
+			main {
+				width: auto;
+
+				> #onairstreams-block,
+				> #contents-block {
+					width: auto;
+					float: none;
+				}
+			}
+		}
+	}
 }

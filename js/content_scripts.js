@@ -10,7 +10,9 @@
 			return page_type == "nicolive";
 		} else if ( url.indexOf( 'live2.nicovideo.jp/watch/' ) != -1 ) {
 			return page_type == "nicolive2";
-		}
+		} else if ( url.indexOf( 'live.nicovideo.jp/recent' ) != -1 ) {
+			return page_type == "nicolive_recent"
+		} 
 	}
 
 	// プレイヤーのチェック： Flash or HTML5
@@ -78,6 +80,11 @@
 				} else {
 					$('html').addClass( 'utz-nico-responsive-live-flash' );
 				}
+			}
+
+			// 生放送一覧ページ
+			else if ( is_page( 'nicolive_recent' ) ) {
+				$('html').addClass( 'utz-nico-responsive-live-recent' );
 			}
 		},
 		remove_class: function() {

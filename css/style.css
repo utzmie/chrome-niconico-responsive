@@ -192,3 +192,16 @@
  */
 @media (max-width: 1024px) {
   /* */ }
+
+/**
+ * NicoLive / Recent (archive)
+ */
+@media (max-width: 1024px) {
+  .utz-nico-responsive-live-recent #page_cover {
+    width: auto; }
+    .utz-nico-responsive-live-recent #page_cover main {
+      width: auto; }
+      .utz-nico-responsive-live-recent #page_cover main > #onairstreams-block,
+      .utz-nico-responsive-live-recent #page_cover main > #contents-block {
+        width: auto;
+        float: none; } }
