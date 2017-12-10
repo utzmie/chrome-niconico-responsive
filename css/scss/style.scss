@@ -370,6 +370,32 @@
 	#page_cover {
 		main {
 			> #onairstreams-block {
+
+				// PS4
+				.ps4-programs-area {
+					.ps4-program-list {
+						@include breakpoint( medium ) {
+							flex-direction: column;
+						}
+
+						.ps4-program-item {
+							@include breakpoint( medium ) {
+								width: auto;
+
+								& + .ps4-program-item {
+									margin-left: 0;
+								}
+
+								.playing-game-pr {
+									white-space: normal;
+								}
+							}
+						}
+					}
+				}
+
+
+				// Item
 				.user-program-list {
 					> li {
 						@include breakpoint( sm ) {
@@ -395,17 +421,4 @@
 			}
 		}
 	}
-
-	// @include breakpoint( small ) {
-	// 	#page_cover {
-	// 		main {
-	// 			> #onairstreams-block {
-	// 				.user-program-list {
-	// 					> li {
-	// 					}
-	// 				}
-	// 			}
-	// 		}
-	// 	}
-	// }
 }

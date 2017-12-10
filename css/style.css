@@ -209,6 +209,22 @@
   .utz-nico-responsive-live-recent #page_cover main > #contents-block {
     min-width: 200px; } }
 
+@media (max-width: 768px) {
+  .utz-nico-responsive-live-recent #page_cover main > #onairstreams-block .ps4-programs-area .ps4-program-list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column; } }
+
+@media (max-width: 768px) {
+  .utz-nico-responsive-live-recent #page_cover main > #onairstreams-block .ps4-programs-area .ps4-program-list .ps4-program-item {
+    width: auto; }
+    .utz-nico-responsive-live-recent #page_cover main > #onairstreams-block .ps4-programs-area .ps4-program-list .ps4-program-item + .ps4-program-item {
+      margin-left: 0; }
+    .utz-nico-responsive-live-recent #page_cover main > #onairstreams-block .ps4-programs-area .ps4-program-list .ps4-program-item .playing-game-pr {
+      white-space: normal; } }
+
 @media (max-width: 640px) {
   .utz-nico-responsive-live-recent #page_cover main > #onairstreams-block .user-program-list > li {
     width: 48%;
