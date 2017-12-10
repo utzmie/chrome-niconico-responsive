@@ -277,10 +277,14 @@
 					@include breakpoint( medium ) {
 						flex-direction: column;
 
-						> [class^="___player-display"],
-						> [class^="___player-status"] {
+						> [class^="___player-display"] {
 							width: auto;
 							margin-bottom: 10px;
+						}
+
+						> [class^="___player-status"] {
+							margin-left: auto;
+							margin-right: auto;
 						}
 					}
 				}
