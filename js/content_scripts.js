@@ -12,6 +12,8 @@
 			return page_type == "nicolive2";
 		} else if ( url.indexOf( 'live.nicovideo.jp/recent' ) != -1 ) {
 			return page_type == "nicolive_recent"
+		} else if ( url.indexOf( 'live.nicovideo.jp/search' ) != -1 ) {
+			return page_type == "nicolive_search"
 		} 
 	}
 
@@ -85,6 +87,11 @@
 			// 生放送一覧ページ
 			else if ( is_page( 'nicolive_recent' ) ) {
 				$('html').addClass( 'utz-nico-responsive-live-recent' );
+			}
+
+			// 生放送検索ページ
+			else if ( is_page( 'nicolive_search' ) ) {
+				$('html').addClass( 'utz-nico-responsive-live-search' );
 			}
 		},
 		remove_class: function() {

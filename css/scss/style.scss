@@ -360,12 +360,24 @@
 	@include breakpoint( medium ) {
 		#page_cover {
 			main {
+				@include breakpoint( small ) {
+					flex-wrap: wrap;
+				}
+
 				> #onairstreams-block {
 					width: calc(100% - 224px);
+
+					@include breakpoint( small ) {
+						width: 100%;
+					}
 				}
 
 				> #contents-block {
 					min-width: 200px;
+
+					@include breakpoint( small ) {
+						margin-left: auto;
+					}
 				}
 			}
 		}
@@ -398,6 +410,26 @@
 					}
 				}
 
+				// Honsha
+				.honsha-programs-area {
+					.honsha-program-list {
+						@include breakpoint( medium ) {
+							flex-direction: column;
+						}
+
+						.honsha-program-item {
+							@include breakpoint( medium ) {
+								width: auto;
+
+								& + .honsha-program-item {
+									margin-left: 0;
+									margin-top: 1em;
+								}
+							}
+						}
+					}
+				}
+
 
 				// Item
 				.user-program-list {
@@ -421,6 +453,33 @@
 							}
 						}
 					}
+				}
+			}
+		}
+	}
+}
+
+
+/**
+ * NicoLive / Search (archive)
+ */
+
+.utz-nico-responsive-live-search {
+	@include breakpoint( large ) {
+		#page_cover {
+			width: auto;
+		}
+
+		#option_area {
+			.provider-filter-area {
+				@include breakpoint( sm ) {
+					margin: 1em 0;
+				}
+			}
+
+			.search-option-toggle-button-area {
+				@include breakpoint( sm ) {
+					position: static;
 				}
 			}
 		}
