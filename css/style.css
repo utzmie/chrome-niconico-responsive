@@ -190,9 +190,6 @@
 /**
  * NicoLive 2 / Flash
  */
-@media (max-width: 1024px) {
-  /* */ }
-
 /**
  * NicoLive / Recent (archive)
  */
@@ -205,3 +202,26 @@
       .utz-nico-responsive-live-recent #page_cover main > #contents-block {
         width: auto;
         float: none; } }
+
+@media (max-width: 768px) {
+  .utz-nico-responsive-live-recent #page_cover main > #onairstreams-block {
+    width: calc(100% - 224px); }
+  .utz-nico-responsive-live-recent #page_cover main > #contents-block {
+    min-width: 200px; } }
+
+@media (max-width: 640px) {
+  .utz-nico-responsive-live-recent #page_cover main > #onairstreams-block .user-program-list > li {
+    width: 48%;
+    max-width: initial;
+    margin-left: 0 !important;
+    -webkit-flex-basis: auto;
+    -ms-flex-preferred-size: auto;
+    flex-basis: auto; }
+    .utz-nico-responsive-live-recent #page_cover main > #onairstreams-block .user-program-list > li:nth-child(odd) {
+      margin-right: 4%; } }
+
+@media (max-width: 480px) {
+  .utz-nico-responsive-live-recent #page_cover main > #onairstreams-block .user-program-list > li {
+    width: 100%; }
+    .utz-nico-responsive-live-recent #page_cover main > #onairstreams-block .user-program-list > li:nth-child(odd) {
+      margin-right: 0; } }

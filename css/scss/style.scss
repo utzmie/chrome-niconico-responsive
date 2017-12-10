@@ -27,6 +27,13 @@
 	}
 
 	// ~ 480px
+	@if $breakpoint == sm {
+		@media (max-width: 640px) {
+			@content;
+		}
+	}
+
+	// ~ 480px
 	@if $breakpoint == small {
 		@media (max-width: 480px) {
 			@content;
@@ -325,10 +332,6 @@
  * NicoLive 2 / Flash
  */
 
-@media (max-width: 1024px) {
-	/* */
-}
-
 
 /**
  * NicoLive / Recent (archive)
@@ -349,4 +352,60 @@
 			}
 		}
 	}
+
+	@include breakpoint( medium ) {
+		#page_cover {
+			main {
+				> #onairstreams-block {
+					width: calc(100% - 224px);
+				}
+
+				> #contents-block {
+					min-width: 200px;
+				}
+			}
+		}
+	}
+
+	#page_cover {
+		main {
+			> #onairstreams-block {
+				.user-program-list {
+					> li {
+						@include breakpoint( sm ) {
+							width: 48%;
+							max-width: initial;
+							margin-left: 0 !important;
+							flex-basis: auto;
+
+							&:nth-child(odd) {
+								margin-right: 4%;
+							}
+						}
+
+						@include breakpoint( small ) {
+							width: 100%;
+
+							&:nth-child(odd) {
+								margin-right: 0;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	// @include breakpoint( small ) {
+	// 	#page_cover {
+	// 		main {
+	// 			> #onairstreams-block {
+	// 				.user-program-list {
+	// 					> li {
+	// 					}
+	// 				}
+	// 			}
+	// 		}
+	// 	}
+	// }
 }
